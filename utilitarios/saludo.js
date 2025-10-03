@@ -5,8 +5,22 @@ saludar=function(){
     let altura =recuperarFloat("txtA");
     let mensajeBienvenido="Bienvenido :" + nombre+" "+apellido;
     mostrararTexto("lblbr",mensajeBienvenido);
+    mostrarImagen("lblI","./imagenes/saludo.gif");
 }
 
+mostrarImagen=function(idComponente,rutaImagen){
+    let componente;
+    componente=document.getElementById(idComponente);
+    componente.src= rutaImagen  
+}
+
+
+
+mostrararTexto=function(idComponente,mensaje){
+    let componente;
+    componente=document.getElementById(idComponente);
+    componente.innerText = mensaje
+}
 
 recuperartexto=function(idComponente){
     let componente ;
@@ -29,8 +43,3 @@ recuperarFloat=function(idComponente){
     return valorFloat;
 }
 
-mostrararTexto=function(idComponente,mensaje){
-    let componente;
-    componente=document.getElementById(idComponente);
-    componente.innerText = mensaje
-}
