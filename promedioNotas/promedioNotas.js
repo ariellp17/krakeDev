@@ -20,6 +20,5 @@ calcularPromedioNotas = function() {
         mostrarTexto("lblre", "DATOS INCORRECTOS - Promedio: " + p);
         mostrarImagen("idimgn", "fracaso.gif");
     }
-
     return promedioRedondeado;
 }

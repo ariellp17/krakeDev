@@ -1,8 +1,5 @@
 let puntos=0;
 let lanzamientos=5;
-
-
-
 jugar=function(){
     let resultado;
     resultado=lanzarDado();
@@ -20,7 +17,6 @@ modificarPuntos=function(numero){
     }
 
 }
-
 modificarLanzamientos=function(){
 lanzamientos=lanzamientos-1;
 cambiarTexto("lblLanzamientos",lanzamientos);
@@ -29,7 +25,6 @@ cambiarTexto("lblLanzamientos",lanzamientos);
     }
     
 }
-
 limpiar=function(){
    puntos = 0;
     lanzamientos = 5;
@@ -37,8 +32,6 @@ limpiar=function(){
     cambiarTexto("lblLanzamientos", lanzamientos);
     cambiarTexto("lblMensaje", ""); 
 }
-
-
 
 //funcion mostrar cara, recibe el numero que quiere mostrar 
 // me muestra la imagen correspondiente al numero que recibe 
@@ -56,7 +49,6 @@ mostrarCara=function(numero){
 }else if(numero ==6){
         cambiarImagen("imgDado","dados6.png");
 }
-
     }
 
 lanzarDado=function(){
