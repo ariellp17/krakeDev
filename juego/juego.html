@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script src="juego.js"></script>
+    <script src="servicioJuego.js"></script>
+    <script src="utilitarios.js"></script>
+    <title>Juego Piedra Papel o Tijera</title>
+    <link rel="stylesheet" href="juego.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>JUEGA PIEDRA PAPEL O TIJERA</h1>
+        
+        <div class="seccion-imagenes">
+            <h2>Selecciona tu jugada:</h2>
+            <div class="imagenes-jugador">
+                <img src="./imagenes/piedra.png.jpeg" alt="Piedra" onclick="jugar('piedra')">
+                <img src="./imagenes/papel.png.jpeg" alt="Papel" onclick="jugar('papel')">
+                <img src="./imagenes/tijera.png.jpeg" alt="Tijera" onclick="jugar('tijera')">
+            </div>
+        </div>
+        
+        <div class="seccion-computador">
+            <h2>Jugada del computador:</h2>
+            <img id="imagenComputador" src="./imagenes/piedra.png.jpeg" alt="Selección computador">
+        </div>
+        
+        <div class="resultado">
+            <h2 id="resultado">Haz tu selección para comenzar</h2>
+        </div>
+        
+        <div class="puntajes">
+            <p id="puntosUsuario">Usuario: 0</p>
+            <p id="puntosComputador">Computador: 0</p>
+        </div>
+    </div>
+    
+    <script src="serviciosJuego.js"></script>
+    <script src="juego.js"></script>
+</body>
+</html>
