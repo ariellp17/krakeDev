@@ -1,0 +1,157 @@
+ body {
+     background-color: black;
+     background-size: cover;
+     margin-left: 0px;
+     margin-right: 0px;
+ }
+
+ .principal {
+     display: flex;
+     background-color: rgba(240, 248, 255, 0.8);
+     margin-left: 0px;
+     margin-right: 0px;
+     flex-direction: column;
+     margin-top: 100px;
+ }
+
+ .titulo {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     margin: 20px;
+     font-size: 30px;
+     font-family: Arial, Helvetica, sans-serif;
+ }
+
+ .logoEscuela {
+     display: flex;
+     flex: 1;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .areaResultado {
+     display: flex;
+     flex: 1;
+     flex-direction: column;
+     justify-content: center;
+     align-items: flex-start;
+     padding: 20px 40px;
+ }
+
+ .imagen {
+     display: flex;
+     flex: 1;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .estiloBoton {
+     background-color: #4CAF50;
+     border: none;
+     color: white;
+     padding: 15px 40px;
+     text-align: center;
+     font-size: 16px;
+     border-radius: 5px;
+     cursor: pointer;
+ }
+
+ .estiloBoton:hover {
+     background-color: white;
+     color: #4CAF50;
+     border: 1px solid #4CAF50;
+     border-radius: 5px;
+ }
+
+ .estiloBoton:active {
+     background-color: #4CAF50;
+     border: none;
+     color: white;
+     padding: 15px 40px;
+     text-align: center;
+     font-size: 16px;
+     border-radius: 5px;
+ }
+
+ .botones {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     margin-top: 20px;
+     gap: 20px;
+ }
+
+ .contenedorBoton {
+     display: flex;
+     flex: 1;
+     justify-content: center;
+     max-width: 200px;
+ }
+
+ .cajaTexto {
+     border-radius: 4px;
+     border: 2px solid #4CAF50;
+     padding: 8px 12px;
+     font-size: 18px;
+     color: rgb(85, 83, 83);
+     min-width: 200px;
+ }
+
+ .ingresoDatos {
+     padding: 0px;
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     font-family: Arial, Helvetica, sans-serif;
+     align-items: center;
+     
+ }
+
+ .tituloCampo {
+     font-size: 20px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: flex-end;
+     margin-right: 20px;
+     min-width: 150px;
+ }
+
+ .logoEscuela {
+     display: flex;
+     flex: 1;
+     justify-content: left;
+     align-items: center;
+
+ }
+
+ .resultado {
+     display: flex;
+     flex-direction: row;
+     font-size: 20px;
+     font-family: Arial, Helvetica, sans-serif;
+     margin-top: 10px;
+     width: 100%;
+ }
+
+ .imagenResultado {
+     display: flex;
+     flex: 6;
+     justify-content: center;
+     align-items: center;
+     margin: 20px;
+ }
+
+ .error {
+     color: red;
+     font-style: italic;
+     font-size: 16px;
+     margin-left: 170px;
+     margin-top: 5px;
+ }
+
+ .logo {
+     width: 200px;
+     height: auto;
+ }

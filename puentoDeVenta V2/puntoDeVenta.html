@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="utilitarios.js"></script>
+    <script src="serviciosPuntoDeVenta.js"></script>
+    <script src="puntoDeVenta.js"></script>
+    <link href="puentoDeVenta.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="principal">
+        <div class="logoEscuela">
+             <img src="logoKrakeDev.png" width="25%" />
+        </div>
+        <div class="titulo">
+            PUNTO DE VENTA
+        </div>
+        <div class="ingresoDatos">
+            <div class="tituloCampo">PRODUCTO</div>
+            <input type="text" class="cajaTexto" id="txtProducto" />
+        </div>
+        <p class="error" id="errorProducto"></p>
+
+        <div class="ingresoDatos">
+            <div class="tituloCampo">CANTIDAD</div>
+            <input type="text" class="cajaTexto" id="txtCantidad" />
+        </div>
+        <p class="error" id="errorCantidad"></p>
+
+        <div class="ingresoDatos">
+            <div class="tituloCampo">PRECIO</div>
+            <input type="text" class="cajaTexto" id="txtPrecio" />
+        </div>
+        <p class="error" id="errorPrecio"></p>
+        <div class="areaResultado">
+            <div class="resultado">
+                <div class="tituloCampo">SUBTOTAL:</div>
+                <div id="lblSubtotal">0.0</div>
+            </div>
+            <div class="resultado">
+                <div class="tituloCampo">DESCUENTO:</div>
+                <div id="lblDescuento">0.0</div>
+            </div>
+            <div class="resultado">
+                <div class="tituloCampo">IVA 12%:</div>
+                <div id="lblValorIVA">0.0</div>
+            </div>
+            <div class="resultado">
+                <div class="tituloCampo">TOTAL:</div>
+                <div id="lblTotal">0.0</div>
+            </div>
+        </div>
+        <div class="botones">
+            <div class="contenedorBoton">
+                <input type="button" class="estiloBoton" value="TOTAL" onclick="calcularValorTotal()" />
+            </div>
+            <div class="contenedorBoton">
+                <input type="button" class="estiloBoton" value="LIMPIAR" onclick="limpiar()" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>
