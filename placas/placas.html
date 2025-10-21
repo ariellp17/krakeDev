@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script src="placas.js"></script>
+    <script src="servicioPlacas.js"></script>
+    <script src="utlilitariosCadenas.js"></script>
+    <link rel="stylesheet" href="placas.css">
+</head>
+<body>
+    <div class="container">
+        <h1> Validador de Placas de Ecuador</h1>
+        
+        <div class="form-group">
+            <label for="inputPlaca">Ingrese la placa:</label>
+            <input type="text" id="inputPlaca" placeholder="ABC-1234" maxlength="8">
+        </div>
+
+        <div class="button-group">
+            <button class="btn-validar" onclick="validarPlaca()">Validar</button>
+            <button class="btn-limpiar" onclick="limpiar()">Limpiar</button>
+        </div>
+
+        <div id="resultado" class="resultado"></div>
+        <div id="errores" class="errores"></div>
+        <div id="provincia" class="provincia"></div>
+        <div id="tipoVehiculo" class="tipoVehiculo"></div>
+        <div id="diaPicoYPlaca" class="diaPicoYPlaca"></div>
+
+        <div class="info-box">
+            <h3>Formato de placa válido:</h3>
+            <ul>
+                <li>7 u 8 caracteres en total</li>
+                <li>3 letras mayúsculas + guión + 3 o 4 dígitos</li>
+                <li>Ejemplo: ABC-1234 o PBA-567</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="utilitariosCadenas.js"></script>
+    <script src="serviciosPlacas.js"></script>
+    <script src="placas.js"></script>
+</body>
+</html>
