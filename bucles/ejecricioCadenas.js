@@ -1,7 +1,13 @@
-ejecutarPrueba1 = function(){
+ejecutarPrueba1 = function () {
     let mensaje;
-    mensaje=recuperarTexto("txtcadena");
+    mensaje = recuperarTexto("txtcadena");
     recorrerCadena(mensaje);
+}
+function ejecutarPrueba2() {
+    let mensaje;
+    mensaje = recuperarTexto("txtcadena");
+    let cadenaInvertida = invertirCadena(mensaje);
+    document.getElementById("lblresultado").innerHTML = cadenaInvertida;
 }
 recorrerCadena = function (cadena) {
     let caracter;
@@ -17,7 +23,7 @@ recorrerCadena = function (cadena) {
     }
 
 }
-invertirCadena = function(cadena) {
+invertirCadena = function (cadena) {
     let resultado = "";
     for (let i = cadena.length - 1; i >= 0; i--) {
         let letra = cadena.charAt(i);
@@ -26,9 +32,32 @@ invertirCadena = function(cadena) {
     return resultado;
 }
 
-function ejecutarPrueba2() {
-    let mensaje;
-    mensaje = recuperarTexto("txtcadena"); 
-    let cadenaInvertida = invertirCadena(mensaje);
-    document.getElementById("lblresultado").innerHTML = cadenaInvertida;
+buscarLetra = function (cadnena, letra) {
+    let letra1;
+    let existeLetra = false;
+    for (let i = 0; i < cadena.length; i++) {
+        letra1 = cadena.charAt(i);
+        if (letra1 == letra) {
+            existeLetra = true
+
+        }
+    }
+    if (existeLetra == true) {
+        return true
+    } else {
+        return false
+    }
+}
+
+contarMayusculas = function(cadena){
+    let letra;
+    let contadorMayuscula;
+    for(let i =0;i<cadena.length;i++){
+        letra = cadena.charAt(i);
+        if(esMayuscula(letra)){
+            contadorMayuscula=contadorMayuscula+1;
+        }
+    }
+    console.log(contadorMayuscula);
+
 }
