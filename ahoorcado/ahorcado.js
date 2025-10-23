@@ -98,13 +98,13 @@ function ingresarLetra() {
         validar(letra);
         // Verificar si ha ganado
         if (coincidencias === 5) {
-            document.getElementById("imgResultado").src = "ganador.gif";
-            document.getElementById("imgResultado").style.display = "block";
+            document.getElementById("ahorcadoImagen").src = "ganador.gif";
+            document.getElementById("ahorcadoImagen").style.display = "block";
         }
         // Verificar si ha perdido
         if (intentos === 10) {
-            document.getElementById("imgResultado").src = "gameOver.gif";
-            document.getElementById("imgResultado").style.display = "block";
+            document.getElementById("ahorcadoImagen").src = "gameOver.gif";
+            document.getElementById("ahorcadoImagen").style.display = "block";
         }
     } else {
         alert("SOLO SE ACEPTAN MAYÚSCULAS");
