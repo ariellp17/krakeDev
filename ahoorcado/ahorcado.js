@@ -113,22 +113,22 @@ function ingresarLetra() {
 
 function mostrarAhorcado() {
     if (errores === 1) {
-        document.getElementById("imgAhorcado").src = "ahorcado_01.png";
+        document.getElementById("ahorcadoImagen").src = "ahorcado_01.png";
     } else if (errores == 2) {
-        document.getElementById("imgAhorcado").src = "ahorcado_02.png";
+        document.getElementById("ahorcadoImagen").src = "ahorcado_02.png";
     } else if (errores == 3) {
-        document.getElementById("imgAhorcado").src = "ahorcado_03.png";
+        document.getElementById("ahorcadoImagen").src = "ahorcado_03.png";
     } else if (errores == 4) {
-        document.getElementById("imgAhorcado").src = "ahorcado_04.png";
+        document.getElementById("ahorcadoImagen").src = "ahorcado_04.png";
     } else if (errores == 5) {
-        document.getElementById("imgAhorcado").src = "ahorcado_05.png";
+        document.getElementById("ahorcadoImagen").src = "ahorcado_05.png";
     } else if (errores == 6) {
-        document.getElementById("imgAhorcado").src = "ahorcado_06.png";
+        document.getElementById("ahorcadoImagen").src = "ahorcado_06.png";
     } else if (errores == 7) {
-        document.getElementById("imgAhorcado").src = "ahorcado_07.png";
+        document.getElementById("ahorcadoImagen").src = "ahorcado_07.png";
     } else if (errores == 8) {
-        document.getElementById("imgAhorcado").src = "ahorcado_08.png";
+        document.getElementById("ahorcadoImagen").src = "ahorcado_08.png";
     } else if (errores == 9) {
-        document.getElementById("imgAhorcado").src = "ahorcado_09.png";
+        document.getElementById("ahorcadoImagen").src = "ahorcado_09.png";
     }
 }
