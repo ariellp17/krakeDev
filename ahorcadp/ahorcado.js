@@ -13,7 +13,7 @@ guradarPalabra = function () {
     palabrasecreta = document.getElementById("txtSecreta");
     if (palabra.length !== 5) {
         alert("Debe ingresar una palabra de 5 letras ");
-    } if  (letra.length === 1 && letra >= 'A' && letra <= 'Z') {
+    } if (letra.length === 1 && letra >= 'A' && letra <= 'Z') {
         alert("Debe ingresar una palabra de 5 letras mayúsculas");
     }
     palabrasecreta = palabra
@@ -44,5 +44,48 @@ ingresarLetra = function () {
         validar(letra);
     } else {
         alert("SOLO SE ACEPTAN MAYÚSCULAS");
+    }
+}
+// Variables globales
+let intentos = 0;
+let coincidencias = 0;
+let errores = 0;
+
+function ingresarLetra() {
+    const letra = document.getElementById("txtSecreta").value;
+
+    // Validar que sea una letra mayúscula
+    if (letra.length === 1 && letra >= 'A' && letra <= 'Z') {
+        intentos++;
+        validar(letra);
+
+        // Verificar si ha ganado
+        if (coincidencias === 5) {
+            alert("HA GANADO");
+        }
+
+        // Verificar si ha perdido
+        if (intentos === 10) {
+            alert("HA PERDIDO");
+        }
+    } else {
+        alert("SOLO SE ACEPTAN MAYÚSCULAS");
+    }
+}
+
+validar = function (letra) {
+    let letrasEncontradas = 0;
+
+    for (let i = 0; i < palabraSecreta.length; i++) {
+        if (palabraSecreta(i) == letra) {
+            mostrarLetra(letra, i);
+            letrasEncontradas++;
+        }
+    }
+    if (letrasEncontradas == 0) {
+        alert("LA LETRA NO ES PARTE DE LA PALABRA");
+        errores++;
+    } else {
+        coincidencias += letrasEncontradas;
     }
 }
