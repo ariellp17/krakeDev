@@ -1,15 +1,45 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="ejercicios1.js"></script>
-            <script src="utilitarios.js"></script>
-    </head>
-    <body>
-        <h1>Calcular Promedio de Notas</h1>
-        <input type="text" id="txtnota"/>
-        <input type="button" value="AGREGAR NOTA" onclick="probarAgruegar();">
-        <input type="button" value="calcular Promedio"  onclick="ejecutarPromedio()">
-         <h3 id="resultado"></h3>
 
-    </body>
+<head>
+    <script src="ejercicios1.js"></script>
+    <script src="utilitarios.js"></script>
+</head>
+
+<body>
+    <h1>Calcular Promedio de Notas</h1>
+    <input type="text" id="txtnota" />
+    <input type="button" value="AGREGAR NOTA" onclick="probarAgruegar();">
+    <input type="button" value="calcular Promedio" onclick="ejecutarPromedio()">
+
+    <h3 id="resultado"></h3>
+    <table>
+        <tr>
+            <th>CABEZERA 1</th>
+            <th>CABEZERA 2</th>
+            <th>CABEZERA 3</th>
+        </tr>
+        <tr>
+            <td>celda 1</td>
+            <td>celda 2</td>
+            <td>celda 3</td>
+        </tr>
+        <tr>
+            <td>celda 4</td>
+            <td>celda 5</td>
+            <td>celda 6</td>
+        </tr>
+        <tr>
+            <td>celda 7</td>
+            <td>celda 8</td>
+            <td>celda 9</td>
+        </tr>
+    </table>
+        <input type="button" value="generar tabla" onclick="generarTabla()">
+        <input type="button" value="Mostrar Notas" onclick="mostrarNotas()">
+    <div id="divtabla">
+
+    </div>
+</body>
+
 </html>
