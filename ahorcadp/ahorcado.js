@@ -89,3 +89,26 @@ validar = function (letra) {
         coincidencias += letrasEncontradas;
     }
 }
+mostrarAhorcado=function(){
+if (errores === 1) {
+        document.getElementById("imgAhorcado").src = "ahorcado1.jpg";
+    } else if (errores === 2) {
+        document.getElementById("imgAhorcado").src = "ahorcado2.jpg";
+    } else if (errores === 3) {
+        document.getElementById("imgAhorcado").src = "ahorcado3.jpg";
+    } else if (errores === 4) {
+        document.getElementById("imgAhorcado").src = "ahorcado4.jpg";
+    } else if (errores === 5) {
+        document.getElementById("imgAhorcado").src = "ahorcado5.jpg";
+    } else if (errores === 6) {
+        document.getElementById("imgAhorcado").src = "ahorcado6.jpg";
+    } else if (errores === 7) {
+        document.getElementById("imgAhorcado").src = "ahorcado7.jpg";
+    } else if (errores === 8) {
+        document.getElementById("imgAhorcado").src = "ahorcado8.jpg";
+    } else if (errores === 9) {
+        document.getElementById("imgAhorcado").src = "ahorcado9.jpg";
+    } else if (errores === 10) {
+        document.getElementById("imgAhorcado").src = "ahorcado10.jpg";
+    }
+}
