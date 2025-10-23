@@ -13,7 +13,7 @@ guradarPalabra = function () {
     palabrasecreta = document.getElementById("txtSecreta");
     if (palabra.length !== 5) {
         alert("Debe ingresar una palabra de 5 letras ");
-    } if (![A - Z].test(palabra)) {
+    } if  (letra.length === 1 && letra >= 'A' && letra <= 'Z') {
         alert("Debe ingresar una palabra de 5 letras mayúsculas");
     }
     palabrasecreta = palabra
@@ -25,13 +25,24 @@ mostrarLetra = function (letra, posicion) {
     }
 }
 
-validar = function (letra){
+validar = function (letra) {
     let letrasEncontradas = 0;
-
     for (let i = 0; i < palabraSecreta.length; i++) {
         if (palabraSecreta(i) == letra) {
             mostrarLetra(letra, i);
             letrasEncontradas++;
         }
+    }
+}
+
+
+ingresarLetra = function () {
+    let letra = document.getElementById("txtSecreta").value;
+
+    // Validar que sea una letra mayúscula
+    if (letra.length === 1 && letra >= 'A' && letra <= 'Z') {
+        validar(letra);
+    } else {
+        alert("SOLO SE ACEPTAN MAYÚSCULAS");
     }
 }
