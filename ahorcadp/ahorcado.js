@@ -19,3 +19,19 @@ guradarPalabra = function () {
     palabrasecreta = palabra
 }
 
+mostrarLetra = function (letra, posicion) {
+    let div = ("div 0", "div 1", "div 2", "div 3", "div 4");
+    if (posicion >= 0 && posicion <= 4) {
+    }
+}
+
+validar = function (letra){
+    let letrasEncontradas = 0;
+
+    for (let i = 0; i < palabraSecreta.length; i++) {
+        if (palabraSecreta(i) == letra) {
+            mostrarLetra(letra, i);
+            letrasEncontradas++;
+        }
+    }
+}
