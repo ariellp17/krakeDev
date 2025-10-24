@@ -112,6 +112,25 @@ td {
     
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th {
+    background-color: #00f06c;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    text-align: left;
+}
+
+td {
+    border: 1px solid #000000;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #000000;
+}
 
 .estiloBoton:hover {
     background-color: white;
