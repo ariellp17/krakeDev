@@ -198,3 +198,52 @@ limpiar = function() {
     deshabilitarComponente("txtSueldo");
     deshabilitarComponente("btnGuardar");
 }
+buscarPorRol = function() {
+    let cedulaBusqueda = recuperarTexto("txtBusquedaCedulaRol");
+    let empleadoEncontrado = buscarEmpleado(cedulaBusqueda);
+    
+    if(empleadoEncontrado == null) {
+        alert("EMPLEADO NO EXISTE");
+    } else {
+        mostrarTexto("infoCedula", empleadoEncontrado.cedula);
+        mostrarTexto("infoNombre", empleadoEncontrado.nombre + " " + empleadoEncontrado.apellido);
+        mostrarTexto("infoSueldo", empleadoEncontrado.sueldo);
+    }
+}
+
+calcularAporteEmpleado = function(sueldo) {
+    let aporte = sueldo * 0.0945;
+    return aporte;
+}
+calcularValorAPagar = function(sueldo, aporteIESS, descuentos) {
+    let valorAPagar = sueldo - aporteIESS - descuentos;
+    return valorAPagar;
+}
+calcularRol = function() {
+
+    let sueldo = recuperarFloatDiv("infoSueldo");
+    let descuentos = recuperarFloat("txtDescuentos");
+    console.log("Sueldo recuperado:", sueldo);
+    console.log("Descuentos recuperados:", descuentos);
+    if(isNaN(sueldo) || sueldo <= 0) {
+        alert("Primero debe buscar un empleado");
+        return;
+    }
+    if(isNaN(descuentos)) {
+        alert("Debe ingresar un valor de descuentos");
+        mostrarTexto("lblErrorDescuentos", "Debe ingresar un valor de descuentos");
+        return;
+    }
+    if(descuentos < 0 || descuentos > sueldo) {
+        alert("El descuento debe ser un valor válido entre 0 y el sueldo del empleado");
+        mostrarTexto("lblErrorDescuentos", "El descuento debe ser un valor válido entre 0 y " + sueldo);
+        return;
+    }
+    mostrarTexto("lblErrorDescuentos", "");
+    let aporteIESS = calcularAporteEmpleado(sueldo);
+    console.log("Aporte IESS calculado:", aporteIESS);
+    let valorAPagar = calcularValorAPagar(sueldo, aporteIESS, descuentos);
+    console.log("Valor a pagar calculado:", valorAPagar);
+    mostrarTexto("infoIESS", aporteIESS.toFixed(2));
+    mostrarTexto("infoPago", valorAPagar.toFixed(2));
+}
