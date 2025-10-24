@@ -3,7 +3,9 @@ let empleados = [
     {cedula:"0914632123",nombre:"Luisa",apellido:"Gonzalez",sueldo:900.0},
     {cedula:"1234567890",nombre:"Pedro",apellido:"Lopez",sueldo:750.0}
 ]
+
 let esNuevo = false;
+
 mostrarOpcionEmpleado = function() {
     mostrarComponente("divEmpleado");
     ocultarComponente("divRol");
@@ -15,16 +17,19 @@ mostrarOpcionEmpleado = function() {
     deshabilitarComponente("txtSueldo");
     deshabilitarComponente("btnGuardar");
 }
+
 mostrarOpcionRol = function() {
     mostrarComponente("divRol");
     ocultarComponente("divEmpleado");
     ocultarComponente("divResumen");
 }
+
 mostrarOpcionResumen = function() {
     mostrarComponente("divResumen");
     ocultarComponente("divEmpleado");
     ocultarComponente("divRol");
 }
+
 mostrarEmpleados = function() {
     let cmpTabla = document.getElementById("tablaEmpleados");
     let contenidoTabla = "<table><tr>" +
@@ -48,6 +53,7 @@ mostrarEmpleados = function() {
     contenidoTabla += "</table>";
     cmpTabla.innerHTML = contenidoTabla;
 }
+
 ejecutarNuevo = function() {
     habilitarComponente("txtCedula");
     habilitarComponente("txtNombre");
@@ -56,6 +62,7 @@ ejecutarNuevo = function() {
     habilitarComponente("btnGuardar");
     esNuevo = true;
 }
+
 buscarEmpleado = function(cedula) {
     let empleadoEncontrado = null;
     let elementoEmpleado;
@@ -68,6 +75,7 @@ buscarEmpleado = function(cedula) {
     }
     return empleadoEncontrado;
 }
+
 agregarEmpleado = function(empleado) {
     let empleadoExistente = buscarEmpleado(empleado.cedula);
     if(empleadoExistente == null) {
@@ -77,11 +85,13 @@ agregarEmpleado = function(empleado) {
         return false;
     }
 }
+
 guardar = function() {
     let valorCedula = recuperarTexto("txtCedula");
     let valorNombre = recuperarTexto("txtNombre");
     let valorApellido = recuperarTexto("txtApellido");
     let valorSueldo = recuperarFloat("txtSueldo");
+    
     let errores = "";
     if(valorCedula.length != 10) {
         errores += "La cédula debe tener exactamente 10 caracteres\n";
@@ -89,6 +99,7 @@ guardar = function() {
     } else {
         mostrarTexto("lblErrorCedula", "");
     }
+    
     if(isNaN(valorCedula)) {
         errores += "La cédula debe contener solo dígitos\n";
         mostrarTexto("lblErrorCedula", "La cédula debe contener solo dígitos");
@@ -135,5 +146,55 @@ guardar = function() {
         } else {
             alert("YA EXISTE UN EMPLEADO CON LA CEDULA " + valorCedula);
         }
+    } else {
+        // Modificar empleado existente
+        let empleadoEncontrado = buscarEmpleado(valorCedula);
+        empleadoEncontrado.nombre = valorNombre;
+        empleadoEncontrado.apellido = valorApellido;
+        empleadoEncontrado.sueldo = valorSueldo;
+        
+        alert("EMPLEADO MODIFICADO EXITOSAMENTE");
+        mostrarEmpleados();
+        deshabilitarComponente("txtCedula");
+        deshabilitarComponente("txtNombre");
+        deshabilitarComponente("txtApellido");
+        deshabilitarComponente("txtSueldo");
+        deshabilitarComponente("btnGuardar");
     }
+}
+
+ejecutarBusqueda = function() {
+    let cedulaBusqueda = recuperarTexto("txtBusquedaCedula");
+    let empleadoEncontrado = buscarEmpleado(cedulaBusqueda);
+    
+    if(empleadoEncontrado == null) {
+        alert("EMPLEADO NO EXISTE");
+    } else {
+        mostrarTextoEnCaja("txtCedula", empleadoEncontrado.cedula);
+        mostrarTextoEnCaja("txtNombre", empleadoEncontrado.nombre);
+        mostrarTextoEnCaja("txtApellido", empleadoEncontrado.apellido);
+        mostrarTextoEnCaja("txtSueldo", empleadoEncontrado.sueldo);
+        habilitarComponente("txtNombre");
+        habilitarComponente("txtApellido");
+        habilitarComponente("txtSueldo");
+        deshabilitarComponente("txtCedula");
+        habilitarComponente("btnGuardar");
+    }
+}
+
+limpiar = function() {
+    mostrarTextoEnCaja("txtCedula", "");
+    mostrarTextoEnCaja("txtNombre", "");
+    mostrarTextoEnCaja("txtApellido", "");
+    mostrarTextoEnCaja("txtSueldo", "");
+    mostrarTexto("lblErrorCedula", "");
+    mostrarTexto("lblErrorNombre", "");
+    mostrarTexto("lblErrorApellido", "");
+    mostrarTexto("lblErrorSueldo", "");
+    esNuevo = false;
+    deshabilitarComponente("txtCedula");
+    deshabilitarComponente("txtNombre");
+    deshabilitarComponente("txtApellido");
+    deshabilitarComponente("txtSueldo");
+    deshabilitarComponente("btnGuardar");
 }
