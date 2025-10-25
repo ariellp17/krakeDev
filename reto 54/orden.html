@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html >
+<head>
+     <script src="orden.js"></script>
+    <script src="utilitarios.js"></script>
+    <link rel="stylesheet" href="orden.css">
+</head>
+<body>
+    <div class="container">
+        <h1>KRAKE DEV</h1>
+        <h2>EVALUACIÓN INDIVIDUAL</h2>
+
+        <div class="form-section">
+            <h3>Agregar Persona</h3>
+            <div class="input-group">
+                <label>Nombre:</label>
+                <input type="text" id="txtNombre" placeholder="Ingrese el nombre">
+                <span class="error" id="errorNombre">El nombre debe tener al menos 3 caracteres</span>
+            </div>
+            <div class="input-group">
+                <label>Edad:</label>
+                <input type="text" id="txtEdad" placeholder="Ingrese la edad">
+                <span class="error" id="errorEdad">La edad debe ser un número entre 0 y 100</span>
+            </div>
+            <button onclick="agregarPersona()">GUARDAR</button>
+        </div>
+
+        <div class="form-section">
+            <h3>Lista de Personas</h3>
+            <table id="tablaPersonas">
+                <thead>
+                    <tr>
+                        <th>EDAD</th>
+                        <th>NOMBRE</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyTabla">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="form-section">
+            <h3>Búsqueda</h3>
+            <button onclick="determinarMayor()">ENCONTRAR MAYOR</button>
+            <button onclick="determinarMenor()">ENCONTRAR MENOR</button>
+            <div id="resultado"></div>
+        </div>
+    </div>
+
+   
+</body>
+</html>
